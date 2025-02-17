@@ -14,5 +14,11 @@ class CustomerController extends Controller
     //save the object which will create a new customer in the DB
     $customer->save();
 }
+public function edit($id)
+{
+     $customer = Customer::find($id);
+     return view('customers.edit')->with('customer', $customer);
+}
 }
 ?>
+
